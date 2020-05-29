@@ -13,8 +13,10 @@ This module provides algorithms for learning the structure and the parameters of
 */
 
 :- module(phil,[induce_hplp_par/2,induce_hplp/2,sample_hplp/4,inference_hplp/3,inference_hplp/4,
-  test_hplp/7,op(500,fx,#),op(500,fx,'-#'),set_hplp/2]).
+  test_hplp/7,  
+  set_hplp/2]).
 
+:- op(500,fx,('#')),op(500,fx,('-#')).
 
 :-use_module(library(auc)).
 :-use_module(library(lists)).
@@ -54,7 +56,7 @@ This module provides algorithms for learning the structure and the parameters of
 
 :- meta_predicate test_hplp_prob(:,+,-,-,-,-).
 :- meta_predicate set_hplp(:,+).
-:- meta_predicate setting_hplp(:,-).
+:- meta_predicate default_setting_hplp(:,-).
 
 
 
@@ -3224,7 +3226,7 @@ sandbox:safe_meta(phil:test_hplp(_,_,_,_,_,_,_), []).
 sandbox:safe_meta(phil:inference_hplp(_,_,_,_), []).
 sandbox:safe_meta(phil:inference_hplp(_,_,_), []).
 sandbox:safe_meta(phil:set_hplp(_,_), []).
-sandbox:safe_meta(phil:setting_hplp(_,_), []).
+sandbox:safe_meta(phil:default_setting_hplp(_,_), []).
 
 
 
